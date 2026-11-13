@@ -1,0 +1,363 @@
+.page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 40px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.heading h1,
+.page > h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.heading p {
+  margin: 0;
+  color: var(--color-muted);
+  max-width: 600px;
+}
+.progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.progress li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-muted);
+}
+.progressBar {
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--color-line);
+}
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 13px;
+}
+.progressLabel small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+.progress .doneStep,
+.progress .currentStep {
+  color: var(--color-ink);
+}
+.doneStep .progressBar {
+  background: var(--color-emerald);
+}
+.currentStep .progressBar {
+  background: var(--color-forest);
+}
+.currentStep,
+.rejectedStep {
+  font-weight: 600;
+}
+.progress .rejectedStep {
+  color: var(--color-danger);
+}
+.rejectedStep .progressBar {
+  background: var(--color-danger);
+}
+.statusPanel {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 24px;
+}
+.statusPanel h2 {
+  margin: 0 0 4px;
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.statusPanel p {
+  margin: 0;
+  color: var(--color-muted);
+  overflow-wrap: anywhere;
+}
+.statusPanel > div {
+  flex: 1;
+  min-width: 0;
+}
+.statusIcon {
+  font-size: 24px;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+.review {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+.approved {
+  border: 1.5px solid var(--color-forest);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.approved .statusIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: var(--color-positive-bg);
+  color: var(--color-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rejected {
+  background: var(--color-danger-bg);
+}
+.rejected h2,
+.rejected .statusIcon {
+  color: var(--color-danger);
+}
+.rejected .reason {
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+.errorSummary {
+  padding: 20px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--color-danger);
+  background: var(--color-danger-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.errorSummary strong {
+  font-weight: 500;
+  color: var(--color-danger);
+}
+.errorSummary ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.errorSummary a {
+  color: var(--color-danger);
+  text-decoration: underline;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.form legend {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.field label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.field input,
+.field select,
+.field textarea {
+  height: 48px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: 15px;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  width: 100%;
+  min-width: 0;
+}
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--color-muted);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-emerald);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.field textarea {
+  height: 96px;
+  padding: 12px 14px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.field [aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+.fieldError {
+  font-size: 13px;
+  color: var(--color-danger);
+}
+.hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+.hint:empty {
+  display: none;
+}
+.twoFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.ownerRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px 44px;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+}
+.percentInput {
+  position: relative;
+}
+.percentInput input {
+  padding-right: 36px;
+  text-align: right;
+}
+.percentInput > span {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  color: var(--color-muted);
+}
+.removeOwner {
+  margin-top: 29px;
+  width: 44px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ownerFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+.totalComplete {
+  color: var(--color-emerald);
+}
+.totalIncomplete {
+  color: var(--color-danger);
+}
+.submitRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+}
+.submitRow button {
+  flex-shrink: 0;
+}
+.readOnly {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.readOnly h2 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  font-weight: 500;
+}
+.readOnly dl {
+  margin: 0;
+}
+.keyValue {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-line);
+  font-size: 15px;
+}
+.keyValue:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+.keyValue dt {
+  color: var(--color-muted);
+}
+.keyValue dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.ownerPercent {
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .page {
+    padding: 32px 20px 64px;
+  }
+  .heading h1 {
+    font-size: 32px;
+  }
+  .twoFields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ownerRow {
+    grid-template-columns: minmax(0, 1fr) 44px;
+  }
+  .ownerRow > :first-child {
+    grid-column: 1 / -1;
+  }
+  .keyValue {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .ownerPercent {
+    text-align: left;
+  }
+  .submitRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .approved > div {
+    flex-basis: calc(100% - 56px);
+  }
+  .progressLabel {
+    flex-direction: column;
+  }
+}

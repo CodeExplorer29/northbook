@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-11-13T06:30:06.120Z",
+  "source": "https://data-api.binance.vision/api/v3/exchangeInfo",
+  "total": 3742,
+  "cadMarkets": [],
+  "selected": [
+    {
+      "symbol": "BTCUSDT",
+      "baseAsset": "BTC",
+      "quoteAsset": "USDT",
+      "status": "TRADING"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "baseAsset": "ETH",
+      "quoteAsset": "USDT",
+      "status": "TRADING"
+    },
+    {
+      "symbol": "BTCUSDC",
+      "baseAsset": "BTC",
+      "quoteAsset": "USDC",
+      "status": "TRADING"
+    },
+    {
+      "symbol": "ETHUSDC",
+      "baseAsset": "ETH",
+      "quoteAsset": "USDC",
+      "status": "TRADING"
+    },
+    {
+      "symbol": "USDCUSDT",
+      "baseAsset": "USDC",
+      "quoteAsset": "USDT",
+      "status": "TRADING"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+/*
+ * Northbook design tokens.
+ * Light theme only. Dark bands are part of the light theme.
+ * Fonts: Geist Sans and Geist Mono (open source).
+ */
+
+:root {
+  /* ---------- Colour ---------- */
+  --color-paper: #ffffff;      /* page background */
+  --color-surface: #f5f8f8;    /* alternate bands, cards, table headers */
+  --color-ink: #131a17;        /* primary text */
+  --color-muted: #5c6662;      /* secondary text */
+  --color-line: #dfe4e2;       /* borders, dividers */
+  --color-line-strong: #c4ccc8;/* input borders, hover borders */
+  --color-forest: #073d30;     /* primary buttons, dark bands */
+  --color-emerald: #0e7a5f;    /* links, active, positive status */
+  --color-mint: #5bd3ac;       /* accents on dark, focus ring */
+  --color-night: #0b0c0e;      /* footer, darkest surfaces */
+  --color-danger: #c0392b;     /* errors, expired, cancelled, rejected */
+
+  /* Tints for status chips */
+  --color-positive-bg: #e3f6ef;   /* with --color-emerald text */
+  --color-neutral-bg: #f5f8f8;    /* with --color-ink text */
+  --color-danger-bg: #fbeae8;     /* with --color-danger text */
+
+  /* On dark bands */
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: rgb(255 255 255 / 0.7);
+  --color-on-dark-faint: rgb(255 255 255 / 0.45);
+  --color-on-dark-line: rgb(255 255 255 / 0.12);
+
+  /* Dark hero and feature bands */
+  --gradient-band-dark: radial-gradient(
+    88% 96% at 52% 33%,
+    #093a25 0%,
+    #062617 40%,
+    #05190c 72%,
+    #020a05 100%
+  );
+
+  /* ---------- Type ---------- */
+  --font-sans: "Geist Sans", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --text-display: 56px;   /* hero headline, weight 500, tracking -0.02em, line 1.05 */
+  --text-h1: 40px;        /* page titles, weight 500, tracking -0.02em */
+  --text-h2: 28px;        /* section titles, weight 500, tracking -0.015em */
+  --text-h3: 19px;        /* card titles, weight 500, tracking -0.01em */
+  --text-body: 15px;      /* default, line 1.6 */
+  --text-small: 14px;     /* secondary copy, line 1.6 */
+  --text-dense: 13px;     /* staff tables */
+  --text-eyebrow: 12px;   /* mono, uppercase, tracking 0.16em, muted */
+
+  --text-amount-xl: 40px; /* pay and receive amounts in the widget, mono, weight 500 */
+  --text-amount-lg: 24px; /* unit price on the quote card, mono */
+  --text-amount-md: 15px; /* amounts in tables, mono */
+
+  /* ---------- Space ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-14: 56px;
+  --space-20: 80px;       /* vertical padding of page sections */
+
+  --container-max: 1200px;
+  --container-gutter: 40px;      /* 20px at phone width */
+
+  /* ---------- Shape ---------- */
+  --radius-pill: 9999px;  /* buttons, chips, selectors */
+  --radius-card: 24px;    /* cards, widget, panels */
+  --radius-card-lg: 32px; /* hero media */
+  --radius-input: 12px;   /* text inputs, amount fields */
+  --radius-small: 6px;    /* table cells highlights, tags inside dense tables */
+
+  --border: 1px solid var(--color-line);
+  --shadow-none: none;    /* surfaces are flat; separation comes from lines and tints */
+  --focus-ring: 0 0 0 4px rgb(91 211 172 / 0.55);
+
+  /* ---------- Motion ---------- */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --easing: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ---------- Component rules ---------- */
+
+/* Numbers: every price, amount, countdown, id and timestamp. */
+.figure {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Section eyebrow above headings. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Primary button: forest pill. One per view. */
+.button-primary {
+  height: 52px;
+  padding: 0 28px;
+  border-radius: var(--radius-pill);
+  background: var(--color-forest);
+  color: var(--color-on-dark);
+  font: 500 15px var(--font-sans);
+}
+.button-primary:hover { background: var(--color-emerald); }
+.button-primary:disabled { background: var(--color-line); color: var(--color-muted); }
+
+/* Secondary button: outlined pill. */
+.button-secondary {
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: 500 15px var(--font-sans);
+}
+
+/* Destructive action in the staff console: outlined, danger text. */
+.button-danger {
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-danger);
+  background: var(--color-paper);
+  color: var(--color-danger);
+}
+
+/* Status chip: always a pill with a text label. */
+.chip { height: 26px; padding: 0 12px; border-radius: var(--radius-pill); font: 500 13px var(--font-sans); }
+.chip-positive { background: var(--color-positive-bg); color: var(--color-emerald); } /* Settled, Approved, Accepted */
+.chip-neutral  { background: var(--color-neutral-bg); color: var(--color-ink); border: var(--border); } /* Awaiting funds, Funds received, Payout sent, Submitted, Draft */
+.chip-danger   { background: var(--color-danger-bg); color: var(--color-danger); } /* Expired, Cancelled, Rejected */
+.chip-indicative { background: transparent; color: var(--color-muted); border: 1px dashed var(--color-line-strong); } /* Indicative */
+
+/* Card. */
+.card {
+  background: var(--color-paper);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+}
+
+/* Firm quote card: a committed price. Stronger frame than an indicative one. */
+.card-firm { border: 1.5px solid var(--color-forest); }
+
+/* Countdown: a thin line across the top of the quote card that drains left to right. */
+.countdown-track { height: 3px; background: var(--color-line); border-radius: var(--radius-pill); }
+.countdown-fill  { height: 3px; background: var(--color-emerald); border-radius: var(--radius-pill); }
+.countdown-fill.is-ending { background: var(--color-danger); } /* last 3 seconds */
+
+/* Tables. Client tables are roomy, staff tables are dense. */
+.table th { font: 500 12px var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); background: var(--color-surface); text-align: left; }
+.table td { border-top: var(--border); height: 56px; font-size: var(--text-small); }
+.table-dense td { height: 40px; font-size: var(--text-dense); }
+.table .numeric { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* Dark band. */
+.band-dark { background: var(--gradient-band-dark); color: var(--color-on-dark); }

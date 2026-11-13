@@ -1,0 +1,14 @@
+FROM node:24-bookworm-slim AS build
+WORKDIR /workspace
+RUN npm install --global pnpm@11.17.0
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter @northbook/web... build
+
+FROM node:24-bookworm-slim AS runtime
+ENV NODE_ENV=production HOSTNAME=0.0.0.0 PORT=3000
+WORKDIR /app
+COPY --from=build --chown=node:node /workspace/apps/web/.next/standalone ./
+USER node
+EXPOSE 3000
+CMD ["node", "apps/web/server.js"]

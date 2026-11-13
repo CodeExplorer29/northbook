@@ -1,0 +1,194 @@
+.background {
+  background: var(--color-surface);
+  min-height: 100%;
+}
+.page {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 40px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: var(--text-dense);
+}
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.heading h1,
+.page > h1 {
+  font-size: var(--text-h2);
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.heading p {
+  color: var(--color-muted);
+  margin: 6px 0 0;
+}
+.heading [role='group'] {
+  gap: 6px;
+}
+.heading [role='group'] button {
+  height: 32px;
+  padding: 0 14px;
+  font-size: var(--text-dense);
+}
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.list {
+  flex: 999 1 560px;
+  min-width: 0;
+  border: var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-paper);
+}
+.list tr:has(.selected) td {
+  background: var(--color-surface);
+}
+.list tr:has(.selected) td:first-child {
+  box-shadow: inset 3px 0 0 var(--color-forest);
+}
+.selected {
+  font-weight: 500;
+}
+.open {
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-paper);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+}
+.panel {
+  flex: 1 1 400px;
+  max-width: 460px;
+  min-width: 0;
+  background: var(--color-paper);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.panelHeading {
+  padding: 20px 24px;
+  border-bottom: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.panelHeading > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.panelHeading h2 {
+  margin: 0;
+  font-size: var(--text-h3);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.panelHeading > span {
+  color: var(--color-muted);
+}
+.details {
+  padding: 8px 24px 16px;
+  margin: 0;
+}
+.details > div,
+.owners dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: var(--border);
+}
+.details > div:first-child {
+  border-top: 0;
+}
+.details dt {
+  color: var(--color-muted);
+  flex-shrink: 0;
+}
+.details dd,
+.owners dd {
+  text-align: right;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.owners {
+  padding: 16px 24px;
+  border-top: var(--border);
+}
+.owners h3 {
+  margin: 0;
+  font-size: 11px;
+}
+.owners dl {
+  margin: 8px 0 0;
+}
+.validTotal {
+  color: var(--color-emerald);
+  font-weight: 500;
+}
+.actions {
+  background: var(--color-surface);
+  padding: 20px 24px;
+  border-top: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.actions > div {
+  display: flex;
+  gap: 10px;
+}
+.actions button {
+  flex: 1;
+  height: 44px;
+  padding: 0 20px;
+  font-size: var(--text-small);
+}
+.actions label {
+  font-weight: 500;
+}
+.actions textarea {
+  height: 88px;
+  width: 100%;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-input);
+  padding: 10px 12px;
+  resize: vertical;
+  background: var(--color-paper);
+}
+.actions p {
+  margin: 0;
+  color: var(--color-muted);
+}
+.actions .failure {
+  color: var(--color-danger);
+}
+@media (max-width: 640px) {
+  .page {
+    padding: 28px 20px 64px;
+  }
+  .panel {
+    max-width: none;
+  }
+  .details > div {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+}

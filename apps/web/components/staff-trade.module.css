@@ -1,0 +1,343 @@
+.surface {
+  background: var(--color-surface);
+  flex: 1;
+}
+.page {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 28px 40px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.heading nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--color-muted);
+}
+.title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.page h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.heading p {
+  color: var(--color-muted);
+  margin: 0;
+}
+.heading strong {
+  font-weight: 500;
+  color: var(--color-ink);
+}
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 20px;
+  align-items: start;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.card {
+  background: var(--color-paper);
+  border: var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  min-width: 0;
+}
+.cardHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 24px;
+  border-bottom: var(--border);
+  flex-wrap: wrap;
+}
+.cardHeading h2 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+.cardHeading > span {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+.amounts {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.amounts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.amounts span {
+  color: var(--color-muted);
+}
+.amounts strong {
+  font-size: 24px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.amounts small {
+  font-size: 15px;
+}
+.values {
+  padding: 0 24px;
+  margin: 0;
+}
+.values > div {
+  display: flex;
+  justify-content: space-between;
+  min-height: 40px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.values dt {
+  font-size: 13px;
+}
+.values dd {
+  text-align: right;
+  margin-left: auto;
+}
+.values button {
+  height: 28px;
+  padding: 0 8px;
+}
+.actions {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.actions > button {
+  width: 100%;
+  height: 44px;
+  font-size: 14px;
+  padding: 0 16px;
+}
+.actions p {
+  color: var(--color-muted);
+  margin: 0;
+}
+.dangerButton {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-danger);
+  background: var(--color-paper);
+  color: var(--color-danger);
+  font-size: 13px;
+  font-weight: 500;
+}
+.dangerButton:hover {
+  background: var(--color-danger-bg);
+}
+.dangerButton:disabled {
+  border-color: var(--color-line);
+  color: var(--color-muted);
+  background: var(--color-surface);
+}
+.confirmation {
+  padding: 16px;
+  border: 1px solid var(--color-danger);
+  border-radius: 12px;
+  background: var(--color-danger-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.confirmation > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.confirmation label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.confirmation textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  resize: vertical;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 6px;
+}
+.confirmation button {
+  font-size: 12px;
+  min-height: 36px;
+  padding: 0 12px;
+}
+.timeline {
+  border-top: var(--border);
+  padding: 18px 24px 6px;
+}
+.timeline h3 {
+  font-size: 11px;
+  margin: 0 0 14px;
+}
+.timeline :global(li) {
+  gap: 12px;
+  grid-template-columns: 16px minmax(0, 1fr);
+}
+.timeline :global(li span) {
+  font-size: 13px;
+}
+.sample {
+  display: inline-block;
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 500;
+  border: var(--border);
+  border-radius: 6px;
+  padding: 1px 7px;
+  background: var(--color-surface);
+}
+.routeVenue {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+.routeVenue small {
+  font-size: 11px;
+  color: var(--color-muted);
+  text-transform: none;
+}
+.routeNote {
+  margin: 0;
+  padding: 16px 24px;
+  border-top: var(--border);
+  color: var(--color-muted);
+}
+.ledgerGroup {
+  border-bottom: var(--border);
+  animation: appear 1.6s ease-out;
+}
+.groupHeading {
+  padding: 14px 24px 10px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.groupHeading strong {
+  font-weight: 500;
+}
+.groupHeading time {
+  color: var(--color-muted);
+}
+.accountOwner {
+  display: block;
+  color: var(--color-muted);
+  font-size: 11px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.balances {
+  padding: 10px 24px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: var(--border);
+}
+.integrity {
+  background: var(--color-surface);
+  padding: 16px 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.integrity p {
+  margin: 0;
+}
+.integrity button {
+  height: 36px;
+  font-size: 13px;
+  padding: 0 16px;
+}
+.noPosting,
+.reversal {
+  margin: 0;
+  padding: 0 24px 14px;
+  color: var(--color-muted);
+}
+.reversal {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.positive {
+  color: var(--color-emerald);
+  font-weight: 500;
+}
+.failure,
+.actions .failure {
+  color: var(--color-danger);
+  overflow-wrap: anywhere;
+}
+.ledgerGroup > .failure {
+  padding: 0 24px 14px;
+}
+@keyframes appear {
+  from {
+    background: var(--color-positive-bg);
+  }
+  to {
+    background: var(--color-paper);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ledgerGroup {
+    animation: none;
+  }
+}
+@media (max-width: 1100px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .page {
+    padding: 24px 20px 64px;
+  }
+  .cardHeading,
+  .groupHeading,
+  .values,
+  .actions,
+  .timeline {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

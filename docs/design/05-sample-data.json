@@ -1,0 +1,201 @@
+{
+  "_note": "All names, accounts, addresses and references are fictional. Amounts are consistent across objects.",
+
+  "indicativePrices": [
+    { "pair": "BTC/CAD", "price": "95,012.40", "updated": "1s ago" },
+    { "pair": "ETH/CAD", "price": "4,183.20", "updated": "2s ago" },
+    { "pair": "USDC/CAD", "price": "1.3951", "updated": "1s ago" },
+    { "pair": "USDT/CAD", "price": "1.3948", "updated": "1s ago" },
+    { "pair": "BTC/USD", "price": "68,104.90", "updated": "1s ago" },
+    { "pair": "ETH/USD", "price": "2,998.50", "updated": "2s ago" },
+    { "pair": "USDC/USD", "price": "1.0000", "updated": "1s ago" },
+    { "pair": "USDT/USD", "price": "0.9998", "updated": "1s ago" }
+  ],
+
+  "venues": [
+    { "name": "Kraken", "enabled": true, "status": "Connected", "lastUpdate": "1s ago", "markets": 9 },
+    { "name": "Coinbase", "enabled": true, "status": "Connected", "lastUpdate": "1s ago", "markets": 6 },
+    { "name": "Binance", "enabled": true, "status": "Connected", "lastUpdate": "2s ago", "markets": 5 }
+  ],
+
+  "personas": [
+    { "label": "Visitor", "detail": "Not signed in" },
+    { "label": "Maple Ridge Payments Inc.", "detail": "Client · Verified · Tier 1", "user": "Priya Nair, Trader" },
+    { "label": "Cedar & Finch Remittance Corp.", "detail": "Client · Not verified", "user": "Tomás Reyes, Admin" },
+    { "label": "Northbook staff", "detail": "Operations", "user": "Dana Okafor" }
+  ],
+  "demoStatus": { "sharedNotice": "Demo data is shared between viewers." },
+
+  "organisations": [
+    { "name": "Maple Ridge Payments Inc.", "jurisdiction": "Ontario, Canada", "tier": "Tier 1", "kyb": "Approved", "maxTrade": "2,000,000 CAD" },
+    { "name": "Harbourline Treasury Ltd.", "jurisdiction": "British Columbia, Canada", "tier": "Standard", "kyb": "Approved", "maxTrade": "500,000 CAD" },
+    { "name": "Cedar & Finch Remittance Corp.", "jurisdiction": "Alberta, Canada", "tier": "Standard", "kyb": "Draft", "maxTrade": "500,000 CAD" }
+  ],
+
+  "activeQuote": {
+    "id": "NB-Q-000342",
+    "organisation": "Maple Ridge Payments Inc.",
+    "pair": "ETH/CAD",
+    "side": "Sell",
+    "youPay": "50.00000000 ETH",
+    "youReceive": "207,892.50 CAD",
+    "clientPrice": "1 ETH = 4,157.85 CAD",
+    "lifetimeSeconds": 15,
+    "secondsRemaining": 12,
+    "payoutTo": "RBC ···· 4471 (sample)",
+    "staffView": {
+      "marketPrice": "4,172.45 CAD",
+      "spreadBps": 35,
+      "spreadAmount": "730.00 CAD",
+      "route": [
+        { "leg": 1, "venue": "Binance", "market": "ETH/USDT", "action": "Sell ETH", "price": "3,000.00", "fee": "0.10%" },
+        { "leg": 2, "venue": "Kraken", "market": "USDT/CAD", "action": "Sell USDT", "price": "1.3950", "fee": "0.20%" }
+      ],
+      "alternativeRoutes": [
+        { "description": "Kraken ETH/CAD direct", "marketPrice": "4,169.13 CAD" }
+      ]
+    }
+  },
+
+  "buyQuoteExample": {
+    "id": "NB-Q-000339",
+    "organisation": "Harbourline Treasury Ltd.",
+    "pair": "BTC/CAD",
+    "side": "Buy",
+    "youPay": "191,160.73 CAD",
+    "youReceive": "2.00000000 BTC",
+    "clientPrice": "1 BTC = 95,580.36 CAD",
+    "staffView": {
+      "marketPrice": "95,247.00 CAD",
+      "spreadBps": 35,
+      "spreadAmount": "666.73 CAD",
+      "route": [
+        { "leg": 1, "venue": "Kraken", "market": "BTC/CAD", "action": "Buy BTC", "price": "95,000.00", "fee": "0.26%" }
+      ]
+    }
+  },
+
+  "trade": {
+    "id": "NB-T-000128",
+    "quoteId": "NB-Q-000342",
+    "organisation": "Maple Ridge Payments Inc.",
+    "pair": "ETH/CAD",
+    "side": "Sell",
+    "youPay": "50.00000000 ETH",
+    "youReceive": "207,892.50 CAD",
+    "clientPrice": "1 ETH = 4,157.85 CAD",
+    "booked": "2026-11-12 14:42:07",
+    "status": "Awaiting client funds",
+    "fundingWindowCloses": "15:42",
+    "instructions": {
+      "send": "50 ETH",
+      "network": "Ethereum",
+      "address": "0x7A3f…SAMPLE…9c1E",
+      "warning": "Sample address. Do not send funds."
+    },
+    "payoutDestination": {
+      "bank": "Royal Sample Bank",
+      "accountName": "Maple Ridge Payments Inc.",
+      "account": "···· 4471",
+      "currency": "CAD",
+      "reference": "NB-P-000128"
+    },
+    "timeline": [
+      { "state": "Trade booked", "time": "14:42:07", "done": true },
+      { "state": "Awaiting client funds", "time": null, "current": true },
+      { "state": "Funds received", "time": null },
+      { "state": "Payout sent", "time": null },
+      { "state": "Settled", "time": null }
+    ],
+    "timelineWhenSettled": [
+      { "state": "Trade booked", "time": "14:42:07" },
+      { "state": "Funds received", "time": "14:58:31", "simulated": true },
+      { "state": "Payout sent", "time": "15:03:12", "simulated": true },
+      { "state": "Settled", "time": "15:20:45", "simulated": true }
+    ]
+  },
+
+  "ledger": [
+    {
+      "event": "Trade booked",
+      "time": "14:42:07",
+      "entries": [
+        { "account": "Client receivable · Maple Ridge", "debit": "50.00000000", "credit": "", "currency": "ETH" },
+        { "account": "Trading position", "debit": "", "credit": "50.00000000", "currency": "ETH" },
+        { "account": "Trading position", "debit": "208,622.50", "credit": "", "currency": "CAD" },
+        { "account": "Client payable · Maple Ridge", "debit": "", "credit": "207,892.50", "currency": "CAD" },
+        { "account": "Spread revenue", "debit": "", "credit": "730.00", "currency": "CAD" }
+      ]
+    },
+    {
+      "event": "Funds received",
+      "time": "14:58:31",
+      "entries": [
+        { "account": "Desk wallet", "debit": "50.00000000", "credit": "", "currency": "ETH" },
+        { "account": "Client receivable · Maple Ridge", "debit": "", "credit": "50.00000000", "currency": "ETH" }
+      ]
+    },
+    {
+      "event": "Payout sent",
+      "time": "15:03:12",
+      "entries": [
+        { "account": "Client payable · Maple Ridge", "debit": "207,892.50", "credit": "", "currency": "CAD" },
+        { "account": "Desk bank", "debit": "", "credit": "207,892.50", "currency": "CAD" }
+      ]
+    }
+  ],
+
+  "recentQuotes": [
+    { "time": "14:42:01", "id": "NB-Q-000342", "pair": "ETH/CAD", "side": "Sell", "youPay": "50.00000000 ETH", "youReceive": "207,892.50 CAD", "price": "4,157.85", "status": "Accepted" },
+    { "time": "14:40:22", "id": "NB-Q-000341", "pair": "ETH/CAD", "side": "Sell", "youPay": "50.00000000 ETH", "youReceive": "207,741.00 CAD", "price": "4,154.82", "status": "Expired" },
+    { "time": "11:15:48", "id": "NB-Q-000337", "pair": "USDT/CAD", "side": "Sell", "youPay": "250,000.000000 USDT", "youReceive": "348,175.00 CAD", "price": "1.3927", "status": "Accepted" },
+    { "time": "Yesterday", "id": "NB-Q-000331", "pair": "BTC/CAD", "side": "Buy", "youPay": "95,402.10 CAD", "youReceive": "1.00000000 BTC", "price": "95,402.10", "status": "Accepted" },
+    { "time": "Yesterday", "id": "NB-Q-000330", "pair": "BTC/CAD", "side": "Buy", "youPay": "95,388.64 CAD", "youReceive": "1.00000000 BTC", "price": "95,388.64", "status": "Expired" }
+  ],
+
+  "blotterTrades": [
+    { "booked": "14:42:07", "id": "NB-T-000128", "organisation": "Maple Ridge Payments Inc.", "pair": "ETH/CAD", "side": "Sell", "base": "50.00000000", "quote": "207,892.50", "clientPrice": "4,157.85", "status": "Awaiting client funds" },
+    { "booked": "13:27:44", "id": "NB-T-000127", "organisation": "Harbourline Treasury Ltd.", "pair": "BTC/CAD", "side": "Buy", "base": "2.00000000", "quote": "191,160.73", "clientPrice": "95,580.36", "status": "Funds received" },
+    { "booked": "11:15:52", "id": "NB-T-000126", "organisation": "Maple Ridge Payments Inc.", "pair": "USDT/CAD", "side": "Sell", "base": "250,000.000000", "quote": "348,175.00", "clientPrice": "1.3927", "status": "Payout sent" },
+    { "booked": "10:02:19", "id": "NB-T-000125", "organisation": "Harbourline Treasury Ltd.", "pair": "USDC/USD", "side": "Buy", "base": "400,000.000000", "quote": "400,480.00", "clientPrice": "1.0012", "status": "Settled" },
+    { "booked": "09:31:05", "id": "NB-T-000124", "organisation": "Maple Ridge Payments Inc.", "pair": "BTC/USD", "side": "Sell", "base": "0.75000000", "quote": "50,899.80", "clientPrice": "67,866.40", "status": "Settled" },
+    { "booked": "Yesterday", "id": "NB-T-000123", "organisation": "Harbourline Treasury Ltd.", "pair": "ETH/USD", "side": "Buy", "base": "20.00000000", "quote": "60,180.00", "clientPrice": "3,009.00", "status": "Cancelled" }
+  ],
+  "blotterSummary": { "inProgress": 3, "settledToday": 2, "spreadRevenueToday": "3,918.40 CAD" },
+
+  "kybApplication": {
+    "organisation": "Cedar & Finch Remittance Corp.",
+    "status": "Draft",
+    "business": {
+      "legalName": "Cedar & Finch Remittance Corp.",
+      "registrationNumber": "AB-2019-0048812",
+      "jurisdiction": "Alberta, Canada",
+      "natureOfBusiness": "Cross-border remittance for small businesses"
+    },
+    "beneficialOwners": [
+      { "name": "Tomás Reyes", "ownership": "60%" },
+      { "name": "Ingrid Sørensen", "ownership": "40%" }
+    ]
+  },
+
+  "configuration": {
+    "spreadsBps": {
+      "sizeBands": ["Under 100k CAD", "100k to 500k CAD", "Over 500k CAD"],
+      "tiers": [
+        { "tier": "Tier 1", "values": [45, 35, 25] },
+        { "tier": "Standard", "values": [60, 50, 40] }
+      ]
+    },
+    "quoteLifetimeSeconds": 15,
+    "minimumTrade": "10,000 CAD",
+    "publicReferenceSpreadBps": 50
+  },
+
+  "errors": {
+    "priceUnavailable": "Waiting for price updates",
+    "belowMinimum": "Minimum trade is 10,000 CAD",
+    "expiredOnAccept": "This quote expired before we received your acceptance. No trade was made.",
+    "rateLimited": "Too many requests. Try again in a moment.",
+    "generic": "Something went wrong. Reference: req_8f2c41"
+  }
+}

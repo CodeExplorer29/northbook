@@ -1,0 +1,16 @@
+FROM node:24-bookworm-slim AS build
+WORKDIR /workspace
+RUN npm install --global pnpm@11.17.0
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter @northbook/server... build
+RUN pnpm --filter @northbook/server deploy --prod --legacy /runtime
+
+FROM node:24-bookworm-slim AS runtime
+ENV NODE_ENV=production SERVER_HOST=:: PORT=3001
+WORKDIR /app
+COPY --from=build --chown=node:node /runtime ./apps/server
+COPY --from=build --chown=node:node /workspace/docs/design ./docs/design
+USER node
+EXPOSE 3001
+CMD ["node", "apps/server/dist/index.js"]

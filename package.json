@@ -1,0 +1,45 @@
+{
+  "name": "northbook",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.17.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "pnpm --filter @northbook/shared build && pnpm -r typecheck && tsc -p tsconfig.tools.json",
+    "test": "pnpm --filter @northbook/shared build && vitest run",
+    "dev": "node scripts/dev.mjs",
+    "dev:apps": "concurrently --kill-others --names shared,web,server \"pnpm --filter @northbook/shared build --watch\" \"pnpm --filter @northbook/web dev\" \"pnpm --filter @northbook/server dev\"",
+    "db:migrate": "node --env-file-if-exists=.env --import tsx apps/server/src/db/migrate.ts",
+    "db:generate": "drizzle-kit generate",
+    "test:e2e": "pnpm --filter @northbook/shared build && playwright test",
+    "db:reset": "node --env-file-if-exists=.env --import tsx apps/server/src/db/reset-command.ts",
+    "db:seed": "node --env-file-if-exists=.env --import tsx apps/server/src/db/seed-command.ts",
+    "diagrams:generate": "node --import tsx scripts/generate-state-diagrams.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.65.0",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "concurrently": "10.0.7",
+    "drizzle-kit": "0.31.11",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.6",
+    "fast-check": "^4.10.2",
+    "globals": "17.14.0",
+    "prettier": "3.10.1",
+    "railway": "3.12.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.2",
+    "vitest": "5.1.0"
+  }
+}
